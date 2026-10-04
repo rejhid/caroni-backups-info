@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How the personal Caroni Backups Google Drive integration accesses, uses, stores, and retains backup data.">
+  <title>Privacy policy · Caroni Backups</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html">Caroni Backups</a>
+    <nav aria-label="Main navigation"><a href="privacy.html" aria-current="page">Privacy policy</a></nav>
+  </header>
+  <main id="main" class="policy">
+    <p class="eyebrow">Google Drive integration</p>
+    <h1>Privacy policy</h1>
+    <p class="updated">Effective October 3, 2026</p>
+    <p class="intro">Caroni Backups is a personal utility maintained by the household account owner. This policy covers its encrypted backup workflow and Google Drive authorization.</p>
+    <section><h2>What the integration accesses</h2><p>The integration requests the Google Drive permission to view and manage files. That permission is broader than the backup folder: Google does not restrict this grant to a single folder. The workflow is configured to operate on the owner’s designated backup folder and retention archive.</p><p>It uses folder identifiers, file names, sizes, hashes and encrypted file contents to locate the destination, upload backups, verify them, restore them and manage retention. It does not request Gmail, Contacts or Calendar access.</p></section>
+    <section><h2>How the data is used</h2><p>Drive access is used for backup and recovery: creating and verifying encrypted backup files, reading them for restoration, and archiving or deleting obsolete backup objects. Unrelated Drive files are not used for analytics, advertising or model training.</p></section>
+    <section><h2>Where data is stored</h2><p>Database dumps and app files are encrypted locally with restic before upload. Google Drive stores the encrypted repository; Google can still see the account, object names, sizes and upload activity. The repository password is held separately and is not uploaded to Drive.</p><p>The OAuth client credentials and refresh token are held in protected configuration on the owner’s host. They are not included in the backup repository or these public pages. Cloud API requests and backup transfers use verified HTTPS.</p></section>
+    <section><h2>Sharing and monitoring</h2><p>The workflow sends encrypted backup objects to the Google Drive account authorized by the owner. It sends empty success or failure heartbeat requests to Healthchecks.io for operational alerts; these do not contain Drive file contents, financial records, credentials or logs.</p><p>Google user data is not sold, used for advertisements or used to train AI models. Its use is limited to the backup and recovery features described here, consistent with the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p></section>
+    <section><h2>Retention and deletion</h2><p>The default snapshot policy retains 14 daily and 8 weekly backups. Obsolete repository objects are moved to a separate deletion archive, retained for 30 days before cleanup. Restic snapshots share encrypted objects, so removing a snapshot does not necessarily remove every object it referenced.</p><p>The owner controls the backup folders and can delete them in Drive. Deleted files may remain in Google’s Trash or other provider retention systems until removed according to Google’s policies. Revoking authorization stops future access; it does not delete existing backup files.</p></section>
+    <section><h2>Your control</h2><p>You can revoke this integration in your Google Account’s third-party connections settings and stop the local backup schedule. To remove local authorization, remove its protected rclone configuration. Keep an independent copy of any backup you still need before deleting backup data or its decryption password.</p></section>
+    <section><h2>These pages</h2><p>These static pages contain no sign-in forms, JavaScript, tracking cookies or analytics. The chosen website host may process ordinary request information, such as IP addresses, under its own privacy policy. No Google credential or household financial record is part of the website.</p></section>
+    <section><h2>Contact and changes</h2><p>For questions, contact the household maintainer through the support email shown on Google’s consent screen. This policy will be updated before the integration introduces a materially different use of Google data; any additional permission will require renewed consent.</p></section>
+  </main>
+  <footer><p>Caroni Backups · Personal household use</p><a href="index.html">Home</a></footer>
+</body>
+</html>
