@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Caroni Backups is a personal utility for encrypted backups of a self-hosted budgeting app to Google Drive.">
+  <title>Caroni Backups</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html">Caroni Backups</a>
+    <nav aria-label="Main navigation"><a href="privacy.html">Privacy policy</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">Personal backup utility</p>
+      <h1 id="title">A private budget.<br>A recoverable backup.</h1>
+      <p class="intro">Caroni Backups copies encrypted backups of a self-hosted budgeting app to the owner’s Google Drive. It is maintained for personal household use.</p>
+      <a class="button" href="privacy.html">Read the privacy policy <span aria-hidden="true">→</span></a>
+    </section>
+    <section class="steps" aria-label="How backups work">
+      <article><p class="step-number">01</p><h2>Encrypt locally</h2><p>The database dump and app files are encrypted with restic before upload. The decryption password stays outside Google Drive.</p></article>
+      <article><p class="step-number">02</p><h2>Copy to Drive</h2><p>Rclone uploads completed backup files to the owner’s designated folder over verified HTTPS.</p></article>
+      <article><p class="step-number">03</p><h2>Verify and recover</h2><p>The workflow verifies uploaded backup data and supports restoring it to an isolated replacement database.</p></article>
+    </section>
+    <section class="permission-note" aria-labelledby="permission-title">
+      <h2 id="permission-title">About Google authorization</h2>
+      <p>The integration requests permission to manage Drive files. Google grants access across your Drive, rather than restricting the grant to the backup folder. The configured backup workflow uses the designated backup folder and its retention archive.</p>
+      <p>Authorization is completed in your browser. This page does not collect passwords, request a Google login, or connect to your Drive.</p>
+    </section>
+  </main>
+  <footer><p>Caroni Backups · Personal household use</p><a href="privacy.html">Privacy policy</a></footer>
+</body>
+</html>
